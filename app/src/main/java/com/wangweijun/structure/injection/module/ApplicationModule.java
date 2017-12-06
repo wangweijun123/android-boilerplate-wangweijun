@@ -1,5 +1,7 @@
 package com.wangweijun.structure.injection.module;
 
+import android.content.Context;
+
 import com.wangweijun.structure.data.DataManager;
 import com.wangweijun.structure.data.remote.StoreService;
 
@@ -14,6 +16,11 @@ import dagger.Provides;
 
 @Module
 public class ApplicationModule {
+    Context mContext;
+
+    public ApplicationModule(Context context) {
+        mContext = context;
+    }
 
     @Singleton
     @Provides
@@ -25,5 +32,11 @@ public class ApplicationModule {
     @Provides
     public DataManager provideDataManager(StoreService storeService) {
         return new DataManager(storeService);
+    }
+
+    @Singleton
+    @Provides
+    public Context provideContext() {
+        return mContext;
     }
 }

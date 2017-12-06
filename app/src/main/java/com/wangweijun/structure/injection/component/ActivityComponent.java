@@ -2,7 +2,7 @@ package com.wangweijun.structure.injection.component;
 
 import com.wangweijun.structure.injection.PerActivity;
 import com.wangweijun.structure.injection.module.ActivityModule;
-import com.wangweijun.structure.ui.main.MainActivity;
+import com.wangweijun.structure.ui.main.RankActivity;
 
 import dagger.Component;
 
@@ -13,5 +13,5 @@ import dagger.Component;
 @Component(modules = ActivityModule.class, dependencies = ApplicationComponent.class)
 public interface ActivityComponent {
 
-    void inject(MainActivity mainActivity);
+    void inject(RankActivity mainActivity);
 }

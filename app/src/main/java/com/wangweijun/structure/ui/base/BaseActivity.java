@@ -22,7 +22,7 @@ public class BaseActivity extends Activity{
 
         activityComponent = DaggerActivityComponent.builder()
                 .applicationComponent(((StructureApplication)getApplication()).getApplicationComponent())
-                .activityModule(new ActivityModule()).build();
+                .activityModule(new ActivityModule(this)).build();
 
     }
 

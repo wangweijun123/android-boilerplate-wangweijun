@@ -9,7 +9,7 @@ import java.util.List;
  * Created by wangweijun1 on 2017/12/6.
  */
 
-public interface MainMvpView extends MvpView{
+public interface RankMvpView extends MvpView{
 
     void showDataLoadSuccess(List<BaseModel> list);
 }

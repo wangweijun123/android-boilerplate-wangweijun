@@ -21,7 +21,7 @@ public class StructureApplication extends Application {
 
     public ApplicationComponent getApplicationComponent() {
         if (applicationComponent == null) {
-            applicationComponent = DaggerApplicationComponent.builder().applicationModule(new ApplicationModule()).build();
+            applicationComponent = DaggerApplicationComponent.builder().applicationModule(new ApplicationModule(getApplicationContext())).build();
         }
         return applicationComponent;
     }
