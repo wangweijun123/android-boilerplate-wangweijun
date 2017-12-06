@@ -3,6 +3,7 @@ package com.wangweijun.structure.injection.module;
 import android.content.Context;
 
 import com.wangweijun.structure.data.DataManager;
+import com.wangweijun.structure.data.local.PreferencesHelper;
 import com.wangweijun.structure.data.remote.StoreService;
 
 import javax.inject.Singleton;
@@ -30,8 +31,14 @@ public class ApplicationModule {
 
     @Singleton
     @Provides
-    public DataManager provideDataManager(StoreService storeService) {
-        return new DataManager(storeService);
+    public PreferencesHelper providePreferencesHelper(Context context) {
+        return new PreferencesHelper(context);
+    }
+
+    @Singleton
+    @Provides
+    public DataManager provideDataManager(StoreService storeService, PreferencesHelper preferencesHelper) {
+        return new DataManager(storeService, preferencesHelper);
     }
 
     @Singleton

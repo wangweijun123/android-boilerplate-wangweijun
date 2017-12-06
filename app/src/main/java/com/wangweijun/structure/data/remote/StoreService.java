@@ -1,5 +1,6 @@
 package com.wangweijun.structure.data.remote;
 
+import com.wangweijun.structure.data.model.AppDetailsModel;
 import com.wangweijun.structure.data.model.IResponse;
 import com.wangweijun.structure.data.model.RankListModel;
 
@@ -21,6 +22,8 @@ public interface StoreService {
     @GET("mapi/edit/recommend")
     Observable<IResponse<RankListModel>> getRankApps(@Query("pagefrom") String pagefrom, @Query("pagesize") String pagesize, @Query("code") String code);
 
+    @GET("mapi/app/get")
+    Observable<IResponse<AppDetailsModel>> getAppDetail(@Query("packagename") String packagename);
 
     /******** Helper class that sets up a new services *******/
     class Creator {

@@ -1,14 +1,17 @@
 package com.wangweijun.structure.ui.main;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.util.Log;
+import android.view.View;
 
 import com.wangweijun.structure.R;
 import com.wangweijun.structure.data.DataManager;
 import com.wangweijun.structure.data.model.BaseModel;
 import com.wangweijun.structure.ui.base.BaseActivity;
+import com.wangweijun.structure.ui.detail.DetailActivity;
 
 import java.util.List;
 
@@ -42,7 +45,26 @@ public class RankActivity extends BaseActivity implements RankMvpView {
         ButterKnife.bind(this);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(rankAdapter);
-
+        rankAdapter.setOnRecyclerViewItemClickListener(new RankAdapter.OnRecyclerViewItemClickListener() {
+            @Override
+            public void onItemClick(View v) {
+                BaseModel baseModel = (BaseModel) v.getTag();
+                Log.i("wang", "onItemClick baseModel:"+baseModel);
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("packagename", baseModel.packagename);
+                startActivity(intent);
+            }
+        });
+        rankAdapter.setOnRecyclerViewItemLongClickListener(new RankAdapter.OnRecyclerViewItemLongClickListener() {
+            @Override
+            public void onItemLongClick(View v) {
+                BaseModel baseModel = (BaseModel) v.getTag();
+                Log.i("wang", "onItemLongClick baseModel:"+baseModel);
+                Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                intent.putExtra("packagename", baseModel.packagename);
+                startActivity(intent);
+            }
+        });
 
         Log.i("wang", "mDataManager:"+mDataManager);
 

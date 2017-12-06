@@ -32,15 +32,6 @@ public class RankPresenter extends BasePresenter<RankMvpView>{
         mDataManager = dataManager;
     }
 
-    @Override
-    public void attachView(RankMvpView mvpView) {
-        super.attachView(mvpView);
-    }
-
-    @Override
-    public void detachView() {
-        super.detachView();
-    }
 
     public void getRankApps() {
         mDataManager.getRankApps()
