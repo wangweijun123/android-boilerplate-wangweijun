@@ -40,9 +40,8 @@ public class RankPresenter extends BasePresenter<RankMvpView>{
                 .subscribe(new Observer<IResponse<RankListModel>>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-
+                        getMvpView().showLoading();
                     }
-
                     @Override
                     public void onNext(@NonNull IResponse<RankListModel> rankListModelIResponse) {
                         RankListModel rankListModel = rankListModelIResponse.getEntity();
@@ -58,13 +57,19 @@ public class RankPresenter extends BasePresenter<RankMvpView>{
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-
+                        getMvpView().hideLoading();
+                        getMvpView().showErrorUI();
                     }
 
                     @Override
                     public void onComplete() {
-
+                        getMvpView().hideLoading();
                     }
                 });
+    }
+
+    public void refresh() {
+        getMvpView().hideErrorUI();
+        getRankApps();
     }
 }

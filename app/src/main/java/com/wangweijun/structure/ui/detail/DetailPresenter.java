@@ -27,12 +27,14 @@ public class DetailPresenter extends BasePresenter<DetailMvpView> {
 
     private final DataManager mDataManager;
 
+    String mPackagename;
     @Inject
     DetailPresenter(DataManager dataManager) {
         mDataManager = dataManager;
     }
 
     public void getAppDetail(String packagename) {
+        mPackagename = packagename;
         mDataManager.getAppDetail(packagename)
                 .subscribeOn(Schedulers.io())
                 .doOnNext(new Consumer<IResponse<AppDetailsModel>>() {
@@ -46,7 +48,7 @@ public class DetailPresenter extends BasePresenter<DetailMvpView> {
                 .subscribe(new Observer<IResponse<AppDetailsModel>>() {
                     @Override
                     public void onSubscribe(@NonNull Disposable d) {
-
+                        getMvpView().showLoading();
                     }
 
                     @Override
@@ -59,12 +61,13 @@ public class DetailPresenter extends BasePresenter<DetailMvpView> {
 
                     @Override
                     public void onError(@NonNull Throwable e) {
-
+                        getMvpView().hideLoading();
+                        getMvpView().showErrorUI();
                     }
 
                     @Override
                     public void onComplete() {
-
+                        getMvpView().hideLoading();
                     }
                 });
     }
@@ -105,6 +108,12 @@ public class DetailPresenter extends BasePresenter<DetailMvpView> {
                     }
                 });
 
+    }
+
+
+    public void refresh() {
+        getMvpView().hideErrorUI();
+        getAppDetail(mPackagename);
     }
 
 

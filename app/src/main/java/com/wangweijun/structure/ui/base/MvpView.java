@@ -5,4 +5,12 @@ package com.wangweijun.structure.ui.base;
  */
 
 public interface MvpView {
+
+    void showLoading();
+
+    void hideLoading();
+
+    void showErrorUI();
+
+    void hideErrorUI();
 }
