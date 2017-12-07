@@ -1,4 +1,4 @@
-package com.wangweijun.structure.data.local;
+package com.wangweijun.structure.data.local.pref;
 
 import android.content.Context;
 import android.content.SharedPreferences;
