@@ -23,6 +23,13 @@
             android:layout_marginTop="10dp"
             android:text="click me" />
 
+        <Button
+            android:id="@+id/bt2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:text="跳转黑名单列表" />
+
     </LinearLayout>
 
 </RelativeLayout>

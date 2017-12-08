@@ -1,5 +1,6 @@
 package com.wangweijun.structure.ui.detail;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -12,6 +13,7 @@ import android.widget.TextView;
 import com.wangweijun.structure.R;
 import com.wangweijun.structure.data.model.AppDetailsModel;
 import com.wangweijun.structure.ui.base.BaseActivity;
+import com.wangweijun.structure.ui.blacklist.BlackListActivity;
 
 import javax.inject.Inject;
 
@@ -28,8 +30,13 @@ public class DetailActivity extends BaseActivity implements DetailMvpView, View.
 
     @BindView(R.id.result)
     TextView result;
+
     @BindView(R.id.bt)
     Button bt;
+
+    @BindView(R.id.bt2)
+    Button bt2;
+
 
     @Inject
     DetailPresenter detailPresenter;
@@ -45,6 +52,7 @@ public class DetailActivity extends BaseActivity implements DetailMvpView, View.
         setContentView(R.layout.activity_detail);
         ButterKnife.bind(this);
         bt.setOnClickListener(this);
+        bt2.setOnClickListener(this);
         detailPresenter.attachView(this);
         detailPresenter.getAppDetail(getIntent().getStringExtra("packagename"));
     }
@@ -62,7 +70,18 @@ public class DetailActivity extends BaseActivity implements DetailMvpView, View.
 
     @Override
     public void onClick(View v) {
-        detailPresenter.getScoreFromSP();
+        switch (v.getId()) {
+            case R.id.bt:
+                detailPresenter.getScoreFromSP();
+                break;
+            case R.id.bt2:
+                Intent intent = new Intent(getApplicationContext(), BlackListActivity.class);
+                startActivity(intent);
+                break;
+            default:
+                break;
+        }
+
     }
 
 

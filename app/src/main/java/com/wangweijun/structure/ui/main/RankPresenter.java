@@ -34,6 +34,7 @@ public class RankPresenter extends BasePresenter<RankMvpView>{
 
 
     public void getRankApps() {
+        checkViewAttached();
         mDataManager.getRankApps()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())

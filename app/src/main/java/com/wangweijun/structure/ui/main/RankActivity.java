@@ -81,6 +81,12 @@ public class RankActivity extends BaseActivity implements RankMvpView {
     }
 
     @Override
+    protected void onDestroy() {
+        super.onDestroy();
+        mainPresenter.detachView();
+    }
+
+    @Override
     public void showDataLoadSuccess(List<BaseModel> list) {
         rankAdapter.addModels(list);
     }

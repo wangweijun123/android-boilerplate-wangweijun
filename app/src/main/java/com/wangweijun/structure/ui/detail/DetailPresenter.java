@@ -34,6 +34,7 @@ public class DetailPresenter extends BasePresenter<DetailMvpView> {
     }
 
     public void getAppDetail(String packagename) {
+        checkViewAttached();
         mPackagename = packagename;
         mDataManager.getAppDetail(packagename)
                 .subscribeOn(Schedulers.io())
@@ -74,6 +75,7 @@ public class DetailPresenter extends BasePresenter<DetailMvpView> {
 
 
     public void getScoreFromSP() {
+        checkViewAttached();
         Observable<Float> observable = Observable.create(new ObservableOnSubscribe<Float>() {
             @Override
             public void subscribe(@NonNull ObservableEmitter<Float> emitter) throws Exception {

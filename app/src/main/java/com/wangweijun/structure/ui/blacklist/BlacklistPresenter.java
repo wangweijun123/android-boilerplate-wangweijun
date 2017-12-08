@@ -30,6 +30,7 @@ public class BlacklistPresenter extends BasePresenter<BlacklistMvpView> {
     }
 
     public void insertAccount(Account account) {
+        checkViewAttached();
         mDataManager.insertAccount(account)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -57,6 +58,7 @@ public class BlacklistPresenter extends BasePresenter<BlacklistMvpView> {
     }
 
     public void insertAccounts(List<Account> accounts) {
+        checkViewAttached();
         mDataManager.insertAccounts(accounts)
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
@@ -85,6 +87,7 @@ public class BlacklistPresenter extends BasePresenter<BlacklistMvpView> {
 
 
     public void queryAccounts() {
+        checkViewAttached();
         mDataManager.queryAccounts()
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
