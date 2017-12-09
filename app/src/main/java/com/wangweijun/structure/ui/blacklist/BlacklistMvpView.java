@@ -12,4 +12,6 @@ import java.util.List;
 public interface BlacklistMvpView extends MvpView {
 
     void showDataLoadSuccess(List<Account> accounts);
+
+    void showEmptyUI();
 }

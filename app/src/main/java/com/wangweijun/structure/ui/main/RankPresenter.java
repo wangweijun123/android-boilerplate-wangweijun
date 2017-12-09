@@ -53,11 +53,17 @@ public class RankPresenter extends BasePresenter<RankMvpView>{
                         for (BaseModel baseModel : list) {
                             Log.i("wang", "baseModel:" + baseModel);
                         }
-                        getMvpView().showDataLoadSuccess(list);
+                        if (list != null && list.size() > 0) {
+                            getMvpView().showDataLoadSuccess(list);
+                        } else {
+                            getMvpView().showEmptyUI();
+                        }
+
                     }
 
                     @Override
                     public void onError(@NonNull Throwable e) {
+                        Log.i("wang", "onError :");
                         getMvpView().hideLoading();
                         getMvpView().showErrorUI();
                     }

@@ -122,4 +122,5 @@ public class DetailActivity extends BaseActivity implements DetailMvpView, View.
     public void hideErrorUI() {
         root.removeView(root.findViewById(R.id.view_container));
     }
+
 }

@@ -13,4 +13,5 @@ public interface MvpView {
     void showErrorUI();
 
     void hideErrorUI();
+
 }

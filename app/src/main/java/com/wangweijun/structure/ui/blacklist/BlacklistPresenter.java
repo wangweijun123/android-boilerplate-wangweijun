@@ -99,10 +99,16 @@ public class BlacklistPresenter extends BasePresenter<BlacklistMvpView> {
 
                     @Override
                     public void onNext(@NonNull List<Account> accounts) {
+                        Log.i("wang", "accounts size:"+accounts.size());
                         for (Account account : accounts) {
                             Log.i("wang", account.toString());
                         }
-                        getMvpView().showDataLoadSuccess(accounts);
+                        if (accounts.size() > 0) {
+                            getMvpView().showDataLoadSuccess(accounts);
+                        } else {
+                            getMvpView().showEmptyUI();
+                        }
+
                     }
 
                     @Override

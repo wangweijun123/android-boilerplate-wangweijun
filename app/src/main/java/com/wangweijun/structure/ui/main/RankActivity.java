@@ -128,4 +128,14 @@ public class RankActivity extends BaseActivity implements RankMvpView {
     public void hideErrorUI() {
         root.removeView(root.findViewById(R.id.view_container));
     }
+
+    @Override
+    public void showEmptyUI() {
+        View errorContainer = LayoutInflater.from(getApplicationContext()).inflate(R.layout.view_no_data, null);
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.WRAP_CONTENT, ViewGroup.LayoutParams.WRAP_CONTENT
+        );
+        params.addRule(CENTER_IN_PARENT);
+        root.addView(errorContainer, params);
+    }
 }

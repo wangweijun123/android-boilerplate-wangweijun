@@ -12,4 +12,6 @@ import java.util.List;
 public interface RankMvpView extends MvpView{
 
     void showDataLoadSuccess(List<BaseModel> list);
+
+    void showEmptyUI();
 }
