@@ -1,4 +1,4 @@
-package com.wangweijun.structure.ui.main;
+package com.wangweijun.structure.ui.soft;
 
 import android.util.Log;
 
@@ -20,22 +20,21 @@ import io.reactivex.disposables.Disposable;
 import io.reactivex.schedulers.Schedulers;
 
 /**
- * Created by wangweijun1 on 2017/12/6.
+ * Created by wangweijun on 2017/12/9.
  */
 
-public class RankPresenter extends BasePresenter<RankMvpView>{
+public class SoftPresenter extends BasePresenter<SoftMvpView> {
 
     DataManager mDataManager;
 
     @Inject
-    public RankPresenter(DataManager dataManager) {
+    public SoftPresenter(DataManager dataManager) {
         mDataManager = dataManager;
     }
 
-
     public void getRankApps() {
         checkViewAttached();
-        mDataManager.getRankApps("0", "20", "RANK_HOT")
+        mDataManager.getRankApps("20", "20", "RANK_HOT")
                 .subscribeOn(Schedulers.io())
                 .observeOn(AndroidSchedulers.mainThread())
                 .subscribe(new Observer<IResponse<RankListModel>>() {

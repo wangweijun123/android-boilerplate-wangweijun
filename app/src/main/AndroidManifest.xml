@@ -14,7 +14,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".ui.main.RankActivity"
+            android:name=".ui.guide.GuideActivity"
             android:screenOrientation="portrait">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,6 +28,7 @@
         <activity
             android:name=".ui.blacklist.BlackListActivity"
             android:screenOrientation="portrait" />
+        <activity android:name=".ui.main.RankActivity"/>
     </application>
 
 </manifest>

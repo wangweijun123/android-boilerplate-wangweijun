@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <com.wangweijun.structure.widget.UnableTouchViewPage
+        android:id="@+id/viewpager"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"/>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2px"
+        android:background="#d3d3d3" />
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#f8f8f8">
+
+        <TextView
+            android:id="@+id/tv_nav_hot"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/nav_hot_selector"
+            android:textColor="@drawable/nav_text_selector"
+            android:gravity="center"
+            android:text="精品" />
+
+        <TextView
+            android:id="@+id/tv_nav_rank"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/nav_rank_selector"
+            android:textColor="@drawable/nav_text_selector"
+            android:gravity="center"
+            android:text="排行"/>
+
+        <TextView
+            android:id="@+id/tv_nav_app"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/nav_app_selector"
+            android:textColor="@drawable/nav_text_selector"
+            android:gravity="center"
+            android:text="软件" />
+
+        <TextView
+            android:id="@+id/tv_nav_game"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/nav_game_selector"
+            android:textColor="@drawable/nav_text_selector"
+            android:gravity="center"
+            android:text="游戏"/>
+
+        <TextView
+            android:id="@+id/tv_nav_setting"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:drawableTop="@drawable/nav_setting_selector"
+            android:textColor="@drawable/nav_text_selector"
+            android:gravity="center"
+            android:text="管理" />
+    </LinearLayout>
+
+
+</LinearLayout>

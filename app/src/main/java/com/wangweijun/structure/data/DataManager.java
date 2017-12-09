@@ -6,11 +6,13 @@ import com.wangweijun.structure.data.local.db.Account;
 import com.wangweijun.structure.data.local.db.DaoSession;
 import com.wangweijun.structure.data.local.pref.PreferencesHelper;
 import com.wangweijun.structure.data.model.AppDetailsModel;
+import com.wangweijun.structure.data.model.HomePageModel;
 import com.wangweijun.structure.data.model.IResponse;
 import com.wangweijun.structure.data.model.RankListModel;
 import com.wangweijun.structure.data.remote.StoreService;
 
 import java.util.List;
+import java.util.Map;
 
 import io.reactivex.Observable;
 import io.reactivex.ObservableEmitter;
@@ -39,8 +41,12 @@ public class DataManager {
         return mPreferencesHelper;
     }
 
-    public Observable<IResponse<RankListModel>> getRankApps() {
-        return mStoreService.getRankApps("1", "5", "RANK_HOT");
+    public Observable<IResponse<HomePageModel>> getHomePageRequest(Map<String, String> params,Map<String, String> headers) {
+        return mStoreService.getHomePageRequest(params, headers);
+    }
+
+    public Observable<IResponse<RankListModel>> getRankApps(String pagefrom, String pagesize,String code) {
+        return mStoreService.getRankApps(pagefrom, pagesize, code);
     }
 
     public Observable<IResponse<AppDetailsModel>> getAppDetail(String packagename) {
