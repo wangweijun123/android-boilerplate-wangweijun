@@ -28,7 +28,13 @@
         <activity
             android:name=".ui.blacklist.BlackListActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".ui.main.RankActivity"/>
+        <activity android:name=".ui.main.RankActivity"
+            android:screenOrientation="portrait"/>
+
+        <activity android:name=".ui.login.LoginActivity"
+            android:screenOrientation="portrait"/>
+
+
     </application>
 
 </manifest>
