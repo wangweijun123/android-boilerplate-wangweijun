@@ -26,8 +26,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/nav_hot_selector"
-            android:textColor="@drawable/nav_text_selector"
+            android:drawableTop="@drawable/selector_nav_hot"
+            android:textColor="@color/selector_nav_text_color"
             android:gravity="center"
             android:text="精品" />
 
@@ -36,8 +36,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/nav_rank_selector"
-            android:textColor="@drawable/nav_text_selector"
+            android:drawableTop="@drawable/selector_nav_rank"
+            android:textColor="@color/selector_nav_text_color"
             android:gravity="center"
             android:text="排行"/>
 
@@ -46,8 +46,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/nav_app_selector"
-            android:textColor="@drawable/nav_text_selector"
+            android:drawableTop="@drawable/selector_nav_app"
+            android:textColor="@color/selector_nav_text_color"
             android:gravity="center"
             android:text="软件" />
 
@@ -56,8 +56,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/nav_game_selector"
-            android:textColor="@drawable/nav_text_selector"
+            android:drawableTop="@drawable/selector_nav_game"
+            android:textColor="@color/selector_nav_text_color"
             android:gravity="center"
             android:text="游戏"/>
 
@@ -66,8 +66,8 @@
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="1"
-            android:drawableTop="@drawable/nav_setting_selector"
-            android:textColor="@drawable/nav_text_selector"
+            android:drawableTop="@drawable/selector_nav_setting"
+            android:textColor="@color/selector_nav_text_color"
             android:gravity="center"
             android:text="管理" />
     </LinearLayout>
