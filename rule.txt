@@ -1,0 +1,19 @@
+   命名规范: 正确的英文拼写
+
+1, 项目名字规范 : 驼峰标识,第一个字母大写, 例如MiFinice,LetvAppStore
+
+2, 包名 : 第一层: 顶级域名，第二层: 公司名字, 第三层，应用名字
+   例如 com.mi.jr , com.letv.appstore
+
+3, 第四层 : 按照基础模块划分包名, 例如 data, ui, util, widget
+
+4, ui 底下按照功能划分包名(package by feature (pbf)) base, home,game,soft,manager,
+   这样也显示出了高内聚，一个feature再一个包底下,如果功能不用，直接删除这个包和入口就over了
+
+5, 每个模块底下按照mvp形式开发
+
+6, 函数名字: 动词或动词短语
+doSomething  handleMessage();
+
+
+
