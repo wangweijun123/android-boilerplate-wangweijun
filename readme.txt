@@ -3,4 +3,4 @@
    pref有什么数据,或者说我要测试presenter层的数据
 3, 注意混淆
 
-
+   dimens.xml 命名
